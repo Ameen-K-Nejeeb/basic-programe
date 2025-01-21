@@ -1,21 +1,20 @@
 /*
-input a numer and check wherhe it is possitive or negetive or zero
-
+find the length of a string without using strlen function
 */
 #include<iostream>
 using namespace std;
 int main(){
      
-    int number;
+     int i,count=0;
 
-    cout<<"enter a number to check wether it is positive or negative :";
-    cin>>number;
-
-    if(number>0){
-        cout<<"the number is positive";
-    }else{
-        cout<<"the number is negative";
+    char name[25];
+    cout<<"length of string \n";
+    cin>>name;
+    
+    for(i=0;name[i]!='\0';i++){
+        count++;
     }
+    cout<<"number of character = "<<count;
 
     return 0;
 }
