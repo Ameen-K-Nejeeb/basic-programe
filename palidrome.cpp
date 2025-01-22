@@ -1,27 +1,29 @@
 /*
-checking it's palidrome
+input two number's swap then by defently a function with pointers and arguments
 */
 #include<iostream>
 using namespace std;
+
+void swap(int *x,int *y){
+    int temp;
+
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 int main(){
 
-    int num,n,digit,rev=0;
+    int a,b;
+    cout<<"enter the valuse of a and b :";
+    cin>>a>>b;
+    cout<<"\n before swap \n";
+    cout<<"a = "<<a<<" "<<"b = "<<b;
 
-    cout<<"enter number to check it's palidrome :";
-    cin>>num;
-    n = num;
-
-    while(num>0){
-        digit = num % 10;
-        rev = (rev*10) + digit;
-        num = num/10;
-    }
-    cout<<"the reverce of the number is \n"<<rev<<"\n";
-    if(n==rev){
-        cout<<"entered number is palidrome";
-    }else{
-        cout<<"entered number is not palidrome";
-    }
+    cout<<"\n after swap \n";
+    swap(&a,&b);
+    
+    cout<<"a = "<<a<<" "<<"b = "<<b;
 
     return 0;
 }
