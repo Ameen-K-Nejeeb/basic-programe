@@ -8,20 +8,18 @@
 
 int main(){
 
-    int number,i;
+    int number,i,j;
 
-    printf("enter a number to display even numbers only :");
     scanf("%d",&number);
 
-    if(number<2){
-        printf("pleace enter a value 2 to any number");
-    }else{
-        for(i=2;i<=number;i++){
-            if(i % 2 == 0){
-                printf("%d  ",i);
-            }
+    for(i=1;i<=number;i++){
+        for(j=0;j<i;j++){
+            printf("*");
         }
+        printf("\n","\t");
     }
+
+
 
     return 0;
 }
