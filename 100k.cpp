@@ -1,7 +1,6 @@
 
 /*
-    Write a program to check whether a student has passed or failed
-     in a subject after he or she enters their mark (pass mark for a subject is 50 out of 100).
+   Write a program to show the grade obtained by a student after he/she enters their total mark percentage
 
 */
 
@@ -9,17 +8,28 @@
 
 int main(){
 
-   float mark;
+    float mark,Total_mark;
 
-    printf("enter your mark to check if you passed or faild :");
+    printf("enter your mark to display your grade :");
     scanf("%f",&mark);
 
-    if(mark>=50){
-        printf("the student has passed %.2f\n",mark);
+    if(mark>=90){
+        printf("A grade %.2f\n");
+    }else if(mark>=80){
+        printf("B grade %.2f\n");
+    }else if(mark>=70){
+        printf("C grade %.2f\n");
+    }else if(mark>=60){
+        printf("D grade %.2f\n");
+    }else if(mark>=50){
+        printf("E grade %.2f\n");
     }else{
-        printf("the student faild % .2f\n",mark);
+        printf("Faield %.2f");
     }
 
+    Total_mark = mark;
+
+    printf("Won Mark is :%.2f",Total_mark);
 
 
     return 0;
