@@ -8,29 +8,22 @@
 
 int main(){
 
-    float mark,Total_mark;
+    char digit;
 
-    printf("enter your mark to display your grade :");
-    scanf("%f",&mark);
+    printf("enter a digit to display corresponding day :");
+    scanf("%c",&digit);
 
-    if(mark>=90){
-        printf("A grade %.2f\n");
-    }else if(mark>=80){
-        printf("B grade %.2f\n");
-    }else if(mark>=70){
-        printf("C grade %.2f\n");
-    }else if(mark>=60){
-        printf("D grade %.2f\n");
-    }else if(mark>=50){
-        printf("E grade %.2f\n");
-    }else{
-        printf("Faield %.2f");
+    switch(digit){
+        case '1':printf("monday %c");break;
+        case '2':printf("tuesday %c");break;
+        case '3':printf("wenesday %c");break;
+        case '4':printf("thusday %c");break;
+        case '5':printf("friday %c");break;
+        case '6':printf("saturday %c");break;
+        case '7':printf("sunday %c");break;
+        default:printf("Not a digit %c");break;
+
     }
-
-    Total_mark = mark;
-
-    printf("Won Mark is :%.2f",Total_mark);
-
 
     return 0;
 }
