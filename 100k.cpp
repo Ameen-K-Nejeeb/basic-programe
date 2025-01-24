@@ -8,21 +8,19 @@
 
 int main(){
 
-    char digit;
+    int number,i;
 
-    printf("enter a digit to display corresponding day :");
-    scanf("%c",&digit);
+    printf("enter a number to display even numbers only :");
+    scanf("%d",&number);
 
-    switch(digit){
-        case '1':printf("monday %c");break;
-        case '2':printf("tuesday %c");break;
-        case '3':printf("wenesday %c");break;
-        case '4':printf("thusday %c");break;
-        case '5':printf("friday %c");break;
-        case '6':printf("saturday %c");break;
-        case '7':printf("sunday %c");break;
-        default:printf("Not a digit %c");break;
-
+    if(number<2){
+        printf("pleace enter a value 2 to any number");
+    }else{
+        for(i=2;i<=number;i++){
+            if(i % 2 == 0){
+                printf("%d  ",i);
+            }
+        }
     }
 
     return 0;
