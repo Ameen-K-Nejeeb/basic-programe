@@ -1,69 +1,46 @@
 /*
-1.Write a program to interchange the values of two arrays
-a.Program should accept an array from the user, swap the values of two arrays and display it on the console
+2.Write a program to sort an array in descending order
+b.Program should accept and array, sort the array values in descending order and display it
 
 */
 #include <stdio.h>
 int main(){
 
-    int array1[100],array2[100],limit,i,temp;
+    int limit,value[100],i,j,temp;
 
-    printf("enter a limit of array size :");
-    scanf("%d",&limit);
-
-
-    printf("enter value to array1 :");
-    for(i=0;i<limit;i++){
-        scanf("%d ",&array1[i]);
-    }
-   
-    printf("enter value to array2 :");
-   for(i=0;i<limit;i++){
-        scanf("%d ",&array2[i]);
-    }
-
-
-    printf("       before swapping the array \n");
-
-    printf("array1 = :");
-    for(i=0;i<limit;i++){
-        printf("%d ",array1[i]);
-    }
+    printf("limit of array :");
+    scanf("%d ",&limit);
 
     printf("\n");
 
-    printf("array2 = :");
+    printf("enter array element :");
     for(i=0;i<limit;i++){
-        printf("%d ",array2[i]);
+        scanf("%d ",&value[i]);
+    }
+
+
+    printf("entered array :");
+    for(i=0;i<limit;i++){
+        printf("%d ",value[i]);
     }
 
     printf("\n");
 
 
-    printf("       after swapping the array\n");
-
     for(i=0;i<limit;i++){
-        temp = array1[i];
-        array1[i] = array2[i];
-        array2[i] = temp;
+        for(j=i+1; j<limit;j++){
+            if(value[i]<value[j]){
+                temp = value[i];
+                value[i] = value[j];
+                value[j] = temp;
+            }
+        }
     }
 
-    printf("array1 = ");
-
+    printf("descending order of array :");
     for(i=0;i<limit;i++){
-        printf("%d ",array1[i]);
+        printf("%d ",value[i]);
     }
-
-    printf("\n");
-
-    printf("array2 = ");
-
-
-    for(i=0;i<limit;i++){
-        printf("%d ",array2[i]);
-    }
-
-
 
     return 0;
 }
