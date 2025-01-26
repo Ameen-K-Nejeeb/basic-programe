@@ -12,7 +12,7 @@ int main(){
         scanf("%d",&a[i]);
     }
     for(i=0;i<limit;i++){
-        printf("%d",a[i],", ");
+        printf("%d  ",a[i]);
     }
 
     printf("\n enter a number to check ,same number in the array :");
