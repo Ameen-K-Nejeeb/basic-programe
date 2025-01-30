@@ -4,7 +4,7 @@ class IfStatement {
     public static void main(String ar[]) {
         System.out.println("Enter a number to check +ve, -ve, or zero:");
 
-        Scanner s = new Scanner(System.in); // Scanner object
+        Scanner s = new Scanner(System.in);
 
         int number = s.nextInt();
 
