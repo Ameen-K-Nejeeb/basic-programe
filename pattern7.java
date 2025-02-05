@@ -14,7 +14,7 @@ public class pattern7 {
             for(int k=i;k<=(i*2-1);k++){
                 System.out.print(k+" ");
             }
-            System.out.print(" ");
+            System.out.print("");
             for(int k=(2*i-2);k>=i;k--){
                 System.out.print(k+" ");
             }
