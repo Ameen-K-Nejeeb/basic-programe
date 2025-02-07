@@ -1,27 +1,59 @@
 
+import java.util.Scanner;
+
+
+
+
 public class pattern_11 {
 
     public static void main(String arg[]){
 
         //searching a value in array
+        System.out.println("enter array limit :");
 
-        int[] array = {10,20,30,40,50};
+        @SuppressWarnings("resource")
+        Scanner limi=new Scanner(System.in);
+        int limit = limi.nextInt();   
+        
+        int array[]=new int[limit];
+        
+        System.out.println("Enter array values");
+        
+           
 
-        int search = 30;
+        for(int i=0;i<limit;i++){
+             array[i] = limi.nextInt();
+        }
 
-        int found = 0;
+        System.out.print("Entered value is :");
+        for(int i=0;i<limit;i++){
+            System.out.print(array[i]+",");
+       }
+        
+       System.out.print("\n Pleace enter your search key :");
 
-        for(int i=0;i<=array[i];i++){
+       Scanner scanner = new Scanner(System.in);
+       int search = scanner.nextInt();
+       int flag=0;
+
+       for(int i=0;i<limit;i++){
             if(array[i]==search){
-                System.out.print("Element found at position "+(i+1)+" \n");
-                found =1;
+                System.out.print("search key found at position :"+(i+1)+"\n");
+                flag =1;
                 break;
             }
-        }
-        if(found == 0){
-            System.out.print("Element not found !");
-        }
+          }
+          
+          if(flag==0){
+            System.out.println("search key not found !");
+            
+
+       }
+       
         
+        
+
+       
 
 
     }
