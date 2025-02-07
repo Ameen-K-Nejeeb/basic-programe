@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 
-public class pattern_11 {
+public class searching {
 
     public static void main(String arg[]){
 
