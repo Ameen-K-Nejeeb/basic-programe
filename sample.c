@@ -1,37 +1,32 @@
 #include <stdio.h>
 
-// Write a program to add a new element at the end of the array.
 int main() {
-    int ar[100];
-    int i,limit,new_value;
     
-    printf("Enter a limit :\n");
-    scanf("%d",&limit);
-    printf("Enter Array values : ");
+    int arr[] = {7,1,9,3,5};
+    int i , temp ;
     
-    for(i=0;i<limit;i++){
-        scanf("%d",&ar[i]);
-    }
-    printf("______Before incerting values______\n");
-    
-    for(i=0;i<limit;i++){
-        printf("%d",ar[i]);
-        if(i != limit-1){
+    printf("Before sorting :");
+    for(i=0;i<5;i++){
+        printf("%d",arr[i]);
+        if(i != 4){
             printf(", ");
         }
     }
-    printf("\nEnter a value to extend array \n");
-    scanf("%d",&new_value);
-    
-    printf("\n______After incerting values______\n");
-    
-    ar[limit] = new_value;
-    limit++;
+    for(int j =1;j<=5-1;j++){
+        for(i=0;i<5-1;i++){
+            if(arr[i]<arr[i+1]){
+                temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+        }
+    }
         
-    for(i=0;i<limit;i++){
-        
-        printf("%d",ar[i]);
-        if(i != limit-1){
+    }
+    printf("\n After sorting :");
+    
+    for(i=0;i<5;i++){
+        printf("%d",arr[i]);
+        if(i != 4){
             printf(", ");
         }
     }
