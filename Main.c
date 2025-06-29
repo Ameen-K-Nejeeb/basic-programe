@@ -1,44 +1,26 @@
 #include<stdio.h>
-#include<math.h>
-
-float area(float pi, float r);
-float surfacearea(float pi, float r);
-float volume(float pi, float r);
-
 int main(){
 
-    float radius = 0.0f;
-    float area_result = 0.0f;
-    float surfacearea_result = 0.0f;
-    float volume_result = 0.0f;
-    const float pi = 3.14f;
+    float weight,conversion;
+    int oneortwo;
 
-    printf("Enter radius to find 'Area','SurfaceArea','Volume' : ");
-    scanf("%f",&radius);
-
-    area_result = area(pi, radius);
-    surfacearea_result = surfacearea(pi, radius);
-    volume_result = volume(pi, radius);
+    printf("\tWeight Conversion Calculator\t\n");
+    printf("1.Kilograms to pound\n2.pounds to kilograms");
+    printf("\n which one you choice(1/2) : ");
+    scanf("%d",&oneortwo);
+    if(oneortwo == 1){
+        printf("Enter your weight in kilograms : ");
+        scanf("%f",&weight);
+        conversion = weight * 2.20462;
+        printf("weight in pounds : %f",conversion);
+    }else if(oneortwo == 2){
+        printf("Enter your weight in pounds : ");
+        scanf("%f",&weight);
+        conversion = weight *0.453592;
+        printf("weight in kilograms : %f",conversion);
+    }else{
+        printf("Y0u should enter (1/2)");
+    }
 
     return 0;
-    
-}
-
-float area(float a,float b){
-    float result;
-    result = a*b;
-    printf("\nArea of circle is :%f ",result);
-    return result;
-}
-float surfacearea(float a ,float b){
-    float result;
-    result = a*b*b;
-    printf("\nSurfaceArea of circle is :%f ",result);
-    return result;
-}
-float volume(float a, float b){
-    float result;
-    result = 4*a*(b*b);
-    printf("\nVolume of circle is : %f",result);
-    return result;
 }
