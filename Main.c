@@ -1,39 +1,44 @@
 #include<stdio.h>
-#include<string.h>
+#include<math.h>
+
+float area(float pi, float r);
+float surfacearea(float pi, float r);
+float volume(float pi, float r);
+
 int main(){
 
-    float price,quantity,total;
-    int p,found;
-    char choice[20];
-    char* arr[] = {"Pizza","Burger","Shawai","Shavarma","Porotta","dhosha"};
-    int n = sizeof(arr)/sizeof(arr[0]);
+    float radius = 0.0f;
+    float area_result = 0.0f;
+    float surfacearea_result = 0.0f;
+    float volume_result = 0.0f;
+    const float pi = 3.14f;
 
-    printf("\n-->Menu<--\n");
-    printf("item count : %d\n\n",n);
-    for(int i=0;i<n;i++){
-        printf("%d. %s \n",i+1,arr[i]);
-    }
+    printf("Enter radius to find 'Area','SurfaceArea','Volume' : ");
+    scanf("%f",&radius);
 
-    printf("which dish did you want : ");
-    scanf("%s",choice);
-    for(int i=0;i<n;i++){
-        if(strcmp(arr[i] , choice) == 0){
-        printf("What is the price for each : \n");
-        scanf("%f",&price);
-        printf("How many would you like : \n");
-        scanf("%d",&p);
-        printf("You have bought %d %s's\n",p,choice);
+    area_result = area(pi, radius);
+    surfacearea_result = surfacearea(pi, radius);
+    volume_result = volume(pi, radius);
 
-        total = p*price;
-        printf("Total is : %f\n",total);
-
-        found =1;
-        break;
-    }
-    }
-
-    if(!found){
-        printf("\nDish not found");
-    }
+    return 0;
     
+}
+
+float area(float a,float b){
+    float result;
+    result = a*b;
+    printf("\nArea of circle is :%f ",result);
+    return result;
+}
+float surfacearea(float a ,float b){
+    float result;
+    result = a*b*b;
+    printf("\nSurfaceArea of circle is :%f ",result);
+    return result;
+}
+float volume(float a, float b){
+    float result;
+    result = 4*a*(b*b);
+    printf("\nVolume of circle is : %f",result);
+    return result;
 }
