@@ -1,51 +1,57 @@
 #include<stdio.h>
 int main(){
 
-    int i,j,k,n;
+    int i,j,k,n,o=4,y=4;
     
-    for(i=0;i<4;i++){
-        for(j=0;j<=i;j++){
-            if(j==0||i==j){
-                printf("* ");
+    for(i=1;i<=5;i++){
+        for(j=1;j<=i;j++){
+            //printf("(%d,%d)",i,j);
+            if(i==j){
+                printf("%d ",i);
             }else{
                 printf("  ");
             }
         }
-        for(k=0;k<7-i*2;k++){
+        for(k=1;k<=5*2-i*2-1;k++){
             printf("  ");
         }
-        for(n=0;n<=i;n++){
-            if(i==n||n==0){
-                printf("* ");
+        for(n=1;n<=i;n++){
+            // printf("(%d,%d)",i,n);
+            if(i==5){
+                break;
+            }else{
+                if(n==1){
+                printf("%d",i);
             }else{
                 printf("  ");
+            }
             }
         }
         
         printf("\n");
-     }//printf("\n");
-    for(i=1;i<5;i++){
+    }
+    
+    for(i=1;i<=4;i++){
         for(j=i;j<=4;j++){
-            if(j==4||i==j){
-                printf("* ");
+            if(j==4){
+                printf("%d",o); 
+                o--;
             }else{
                 printf("  ");
             }
         }
-        for(k=0;k<i*2-1;k++){
+        for(k=1;k<=i*2;k++){
             printf("  ");
         }
         for(n=i;n<=4;n++){
-             //printf("(%d,%d)",i,n);
-             if(n==4||i==n){
-                 printf("* ");
-             }else{
-                 printf("  ");
+            if(n==i){
+                printf("%d",y); 
+                y--;
+            }else{
+                printf("");
             }
         }
         printf("\n");
     }
-    
-
     return 0;
 }
