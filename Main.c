@@ -1,57 +1,36 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
 
-    int i,j,k,n,o=4,y=4;
+int main() {
     
-    for(i=1;i<=5;i++){
-        for(j=1;j<=i;j++){
-            //printf("(%d,%d)",i,j);
-            if(i==j){
-                printf("%d ",i);
-            }else{
-                printf("  ");
-            }
-        }
-        for(k=1;k<=5*2-i*2-1;k++){
-            printf("  ");
-        }
-        for(n=1;n<=i;n++){
-            // printf("(%d,%d)",i,n);
-            if(i==5){
-                break;
-            }else{
-                if(n==1){
-                printf("%d",i);
-            }else{
-                printf("  ");
-            }
-            }
-        }
-        
-        printf("\n");
-    }
+     int i,num,pos;
+     int arr[] = {11,22,33,55,11,66,99};
+     int n = sizeof(arr)/sizeof(arr[0]);
+     
+     printf("Array : ");
+     for(i=0;i<n;i++){
+         printf("%d",arr[i]);if(i!=n-1)printf(", ");
+     }
+     printf("\n Array size : %d",n);
+    printf("\nwhich position to add : ");
+    scanf("%d",&pos);
     
-    for(i=1;i<=4;i++){
-        for(j=i;j<=4;j++){
-            if(j==4){
-                printf("%d",o); 
-                o--;
-            }else{
-                printf("  ");
-            }
+    printf("\nEnter a element : ");
+    scanf("%d",&num);
+    
+    if(n == pos){
+        n++;
+        arr[n-1] = num;
+    }else{
+        for(i=n;i>=pos;i--){
+            arr[i] = arr[i-1];
         }
-        for(k=1;k<=i*2;k++){
-            printf("  ");
-        }
-        for(n=i;n<=4;n++){
-            if(n==i){
-                printf("%d",y); 
-                y--;
-            }else{
-                printf("");
-            }
-        }
-        printf("\n");
+        n++;
+        arr[pos-1] = num;
     }
+    printf("\nupdated array : ");
+         for(i=0;i<n;i++){
+         printf("%d",arr[i]);if(i!=n-1)printf(", ");
+     }
+
     return 0;
 }
