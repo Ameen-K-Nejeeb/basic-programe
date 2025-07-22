@@ -1,45 +1,37 @@
-interface Prey {
-    void flee();
+abstract class Vehicle {
+    abstract void go();
 }
 
-interface Predator {
-    void hunt();
-}
-
-class Rabbit implements Prey {
-    public void flee() {
-        System.out.println("*Rabbit is running away*");
+class Car extends Vehicle {
+    void go() {
+        System.out.println("Driving the Car");
     }
 }
 
-class Fish implements Prey, Predator {
-    public void flee() {
-        System.out.println("*Fish swims away*");
-    }
-
-    public void hunt() {
-        System.out.println("*Fish hunts*");
+class Bike extends Vehicle {
+    void go() {
+        System.out.println("Riding the Car");
     }
 }
 
-class Hawk implements Predator {
-    public void hunt() {
-        System.out.println("*Hawk hunts*");
+class Boat extends Vehicle {
+    void go() {
+        System.out.println("Driving the boat");
     }
 }
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Rabbit rabbit = new Rabbit();
-        Hawk hawk = new Hawk();
-        Fish fish = new Fish();
 
-        rabbit.flee();
-        hawk.hunt();
+        Car car = new Car();
+        Bike bike = new Bike();
+        Boat boat = new Boat();
 
-        System.out.println();
+        Vehicle[] vehicles = { car, bike, boat };
 
-        fish.flee();
-        fish.hunt();
+        for (Vehicle vehicle : vehicles) {
+            vehicle.go();
+        }
+
     }
 }
